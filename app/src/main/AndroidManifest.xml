@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PostRequestApp">
-        <activity android:name=".FillInfoActivity"></activity>
+        <activity android:name=".UpdateDeleteActivity"></activity>
+        <activity android:name=".FillInfoActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

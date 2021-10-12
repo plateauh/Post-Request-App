@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Post Request App</string>
     <string name="add_new_user">Add new user</string>
+    <string name="update_delete_user">update/delete user</string>
 </resources>
