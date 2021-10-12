@@ -14,7 +14,7 @@ interface APIInterface {
     @PUT("/test/{id}")
     fun updateUser(@Path("id") id: Int, @Body userData: UserItem): Call<UserItem>
 
-    @PUT("/test/{id}")
+    @DELETE("/test/{id}")
     fun deleteUser(@Path("id") id: Int): Call<Void>
 
 }
