@@ -8,12 +8,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.Dispatchers.Main
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -45,13 +39,8 @@ class MainActivity : AppCompatActivity() {
         val call: Call<Users?>? = apiInterface!!.getUsers()
         call?.enqueue(object: Callback<Users?>{
             override fun onResponse(call: Call<Users?>, response: Response<Users?>) {
-                val data: Users? = response.body()
-                if (data != null) {
-                    for (item in data){
-                        usersList.add(item)
-                    }
-                    recyclerView.adapter = RecyclerViewAdapter(usersList)
-                }
+                usersList = response.body()!!
+                recyclerView.adapter = RecyclerViewAdapter(usersList)
             }
             override fun onFailure(call: Call<Users?>, t: Throwable) {
                 Toast.makeText(this@MainActivity, "Something went wrong, please try again",

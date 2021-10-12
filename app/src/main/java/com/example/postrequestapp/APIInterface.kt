@@ -8,7 +8,7 @@ import retrofit2.http.POST
 interface APIInterface {
 
     @POST("/test/")
-    fun addUser(@Body data: Users): Call<Users>
+    fun addUser(@Body data: UserItem): Call<UserItem?>?
 
     @GET("/test/")
     fun getUsers(): Call<Users?>?

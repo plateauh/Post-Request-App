@@ -6,9 +6,9 @@ class Users : ArrayList<UserItem>()
 
 data class UserItem (
 
-    @SerializedName("name")
+    @SerializedName("location")
     val location: String,
 
-    @SerializedName("location")
+    @SerializedName("name")
     val name: String
 )
