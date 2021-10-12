@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
         Log.d("users", "After setting $usersList")
 
         recyclerView = findViewById(R.id.users_rv)
-        recyclerView.adapter = RecyclerViewAdapter(usersList)
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
@@ -51,6 +50,7 @@ class MainActivity : AppCompatActivity() {
                     for (item in data){
                         usersList.add(item)
                     }
+                    recyclerView.adapter = RecyclerViewAdapter(usersList)
                 }
             }
             override fun onFailure(call: Call<Users?>, t: Throwable) {
