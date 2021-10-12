@@ -1,9 +1,7 @@
 package com.example.postrequestapp
 
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface APIInterface {
 
@@ -12,4 +10,11 @@ interface APIInterface {
 
     @GET("/test/")
     fun getUsers(): Call<Users?>?
+
+    @PUT("/test/{id}")
+    fun updateUser(@Path("id") id: Int, @Body userData: UserItem): Call<UserItem>
+
+    @PUT("/test/{id}")
+    fun deleteUser(@Path("id") id: Int): Call<Void>
+
 }

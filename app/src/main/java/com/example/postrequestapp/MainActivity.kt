@@ -26,6 +26,12 @@ class MainActivity : AppCompatActivity() {
             finish()
         }
 
+        val updateDeleteButton = findViewById<Button>(R.id.update_delete_btn)
+        updateDeleteButton.setOnClickListener {
+            startActivity(Intent(this, UpdateDeleteActivity::class.java))
+            finish()
+        }
+
         usersList = arrayListOf()
         setUsersFromAPI()
         Log.d("users", "After setting $usersList")
